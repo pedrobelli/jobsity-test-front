@@ -1,0 +1,41 @@
+<div class="centered-content">
+  <div class="content">
+    <div class="sign-up-form-content">
+      <h3>Sign up</h3>
+
+      <form class="form" [formGroup]="signUpForm" (ngSubmit)="submitForm()">
+        <div class="row g-3">
+          <div class="col-sm-12">
+            <div class="form-group">
+              <label for="email" class="form-label">Email</label>
+              <input type="text" class="form-control" id="email" formControlName="email">
+              <app-form-field-validator [control]="signUpForm.get('email')"></app-form-field-validator>
+            </div>
+          </div>
+          <div class="col-sm-12">
+            <div class="form-group">
+              <label for="password" class="form-label">Password</label>
+              <input type="password" class="form-control" id="password" formControlName="password" minlength="3">
+              <app-form-field-validator [control]="signUpForm.get('password')"></app-form-field-validator>
+            </div>
+          </div>
+        </div>
+
+        <div class="sign-up-button-row">
+          <button class="btn btn-cerulean-900 sign-up-button">
+            Create Account
+          </button>
+        </div>
+
+        <div class="sign-in-row">
+          <span>Already have an account?
+            <a class="sign-in-link" (click)="router.navigate(['/login'])">
+              Sign In
+            </a>
+        </span>
+
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

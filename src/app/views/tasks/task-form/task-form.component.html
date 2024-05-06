@@ -1,0 +1,42 @@
+<div>
+  <h3 *ngIf="currentAction === NEW">New Task</h3>
+  <h3 *ngIf="currentAction === EDIT">Edit Task</h3>
+  <h3 *ngIf="currentAction === DETAIL">Task Detail</h3>
+
+  <form class="form" [formGroup]="taskForm" (ngSubmit)="submitForm()">
+    <div class="row g-3">
+      <div class="col-sm-12 col-md-4">
+        <div class="form-group">
+          <label for="title" class="form-label">Title</label>
+          <input type="text" class="form-control" id="title" formControlName="title">
+          <app-form-field-validator [control]="taskForm.get('title')"></app-form-field-validator>
+        </div>
+      </div>
+      <div class="col-sm-12 col-md-4">
+        <div class="form-group">
+          <label for="status" class="form-label">Status:</label>
+          <select class="form-select" id="status" formControlName="status">
+            <option></option>
+            <option *ngFor="let item of statuses" [value]="item.id">{{item.value}}</option>
+          </select>
+          <app-form-field-validator [control]="taskForm.get('status')"></app-form-field-validator>
+        </div>
+      </div>
+    </div>
+
+    <div class="row btn-container">
+      <div class="col d-flex justify-content-end justify-content-md-start">
+        <button type="button" class="btn btn-secondary mx-2" (click)="back()">
+          Back
+        </button>
+        <button
+          type="submit"
+          class="btn btn-cerulean-900 mx-2"
+          [disabled]="taskForm.invalid"
+          *ngIf="currentAction === NEW || currentAction === EDIT">
+          Save
+        </button>
+      </div>
+    </div>
+  </form>
+</div>

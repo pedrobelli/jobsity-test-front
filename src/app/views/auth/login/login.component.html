@@ -1,0 +1,40 @@
+<div class="centered-content">
+  <div class="content">
+    <div class="login-form-content">
+      <div class="login-title">
+        Jobsite Test
+      </div>
+
+      <form class="form" [formGroup]="signInForm" (ngSubmit)="submitForm()">
+        <div class="row g-3">
+          <div class="col-sm-12">
+            <div class="form-group">
+              <label for="email" class="form-label">Email</label>
+              <input type="text" class="form-control" id="email" formControlName="email">
+              <app-form-field-validator [control]="signInForm.get('email')"></app-form-field-validator>
+            </div>
+          </div>
+          <div class="col-sm-12">
+            <div class="form-group">
+              <label for="password" class="form-label">Password</label>
+              <input type="password" class="form-control" id="password" formControlName="password">
+              <app-form-field-validator [control]="signInForm.get('password')"></app-form-field-validator>
+            </div>
+          </div>
+        </div>
+
+        <div class="login-button-row">
+          <button class="btn btn-cerulean-900 login-button">
+            Login
+          </button>
+        </div>
+
+        <div class="sign-up-row">
+          <a class="sign-up-link" (click)="router.navigate(['/sign-up'])">
+            Sign up
+          </a>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

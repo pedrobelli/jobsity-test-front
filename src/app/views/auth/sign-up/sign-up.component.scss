@@ -1,0 +1,28 @@
+.centered-content {
+
+  .content {
+
+    .sign-up-form-content {
+      .sign-in-row {
+        width: 100%;
+        padding-top: 20px;
+        text-align: center;
+
+        .sign-in-link {
+          cursor: pointer;
+          font-size: 14px;
+          font-weight: 300 !important;
+          color: #464545 !important;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 1000px) {
+
+  .sign-up-form-content {
+    max-width: 500px;
+    box-shadow: 0px 5px 10px rgb(58 74 98 / 40%);
+  }
+}

@@ -1,1 +1,139 @@
 /* You can add global styles to this file, and also import other style files */
+
+/* Importing Bootstrap SCSS file. */
+@import 'bootstrap/scss/bootstrap';
+@import 'material-icons/iconfont/material-icons.css';
+@import 'node_modules/ngx-toastr/toastr';
+@import 'sweetalert2/src/sweetalert2.scss';
+
+.component-body, .btn-container, .form {
+  margin-top: 50px;
+}
+
+.btn {
+  font-weight: 600;
+}
+
+.btn-outline-cerulean-500 {
+  border-color: #14aaed;
+  color: #1d1e24;
+
+  &:hover {
+    background-color: rgba(20,170,237,.07);;
+    border-color: #14aaed;
+  }
+}
+
+.btn-cerulean-900 {
+  background-color: #195674 !important;
+  color: #fff !important;
+
+  &:hover {
+    background-color: #1b3a4c !important;
+  }
+}
+
+.btn-cancel-swal {
+  margin-left: 3px;
+  margin-right: 3px;
+}
+
+.btn-confirm-swal {
+  margin-left: 3px;
+  margin-right: 3px;
+}
+
+.form-check-input {
+
+  &:checked {
+    background-color: #195674;
+    border-color: #195674;
+  }
+}
+
+.pagination {
+
+  .page-link {
+    color: #195674;
+  }
+
+  .active{
+
+    .page-link {
+      background-color: #195674;
+      border-color: #195674;
+      color: #fff;
+    }
+  }
+}
+
+.centered-content {
+  flex-direction: column;
+  justify-content: center;
+
+  .content {
+    text-align: left;
+    justify-content: center;
+
+    .login-form-content,
+    .sign-up-form-content {
+      margin-top: 15%;
+      margin-left: auto;
+      margin-right: auto;
+      border-radius: 10px;
+      padding: 30px;
+
+      .login-title {
+        text-align: center;
+        text-transform: uppercase;
+        font-size: 2em;
+        font-weight: 600;
+        margin-bottom: 30px;
+      }
+
+      .login-form {
+        min-width: 150px;
+        max-width: 500px;
+        width: 100%;
+      }
+
+      .login-full-width {
+        width: 100%;
+      }
+
+      .login-button-row,
+      .sign-up-button-row {
+        width: 100%;
+        padding-top: 35px;
+
+        .login-button,
+        .sign-up-button {
+          width: 100% !important;
+          min-width: unset !important;
+        }
+      }
+
+      .sign-up-row {
+        width: 100%;
+        padding-top: 20px;
+        text-align: left;
+
+        .sign-up-link {
+          cursor: pointer;
+          font-size: 14px;
+          font-weight: 300 !important;
+          color: #464545 !important;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 1000px) {
+
+  .login-form-content,
+  .sign-up-form-content {
+    max-width: 500px;
+    box-shadow: 0px 5px 10px rgb(58 74 98 / 40%);
+  }
+}

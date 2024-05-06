@@ -1,0 +1,60 @@
+<div class="component-header">
+  <div class="row">
+    <div class="col">
+      <h3>Tasks</h3>
+    </div>
+    <div class="col d-flex justify-content-end">
+      <button type="button" class="btn btn-outline-cerulean-500" (click)="router.navigate(['/tasks/new'])">New</button>
+    </div>
+  </div>
+</div>
+
+<div class="component-body">
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col"></th>
+        <th scope="col">Title</th>
+        <th scope="col">Status</th>
+        <th scope="col">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let task of tasks; index as i">
+        <td>
+          <input
+            class="form-check-input"
+            type="checkbox"
+            *ngIf="task.status === TASK_PENDING"
+            [(ngModel)]="task.selected"
+            [checked]="task.selected"
+      >
+        </td>
+        <td class="title">{{ task.title }}</td>
+        <td>{{ task.status | taskStatus }}</td>
+        <td>
+          <a (click)="edit(task.id)"><span class="material-icons-outlined table-icons">edit</span></a>
+          <a (click)="delete(task)"><span class="material-icons-outlined table-icons">delete</span></a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="d-flex justify-content-between p-2">
+    <div class="form-control-sm pagination-options-control">
+      <select class="form-select" [(ngModel)]="pageSize" (ngModelChange)="changedPageSize()">
+        <option *ngFor="let item of paginationOptions" [value]="item.id">{{item.value}}</option>
+      </select>
+    </div>
+
+    <ngb-pagination
+      [collectionSize]="collectionSize"
+      [(page)]="page"
+      [pageSize]="pageSize"
+      (pageChange)="loadDataTable()"
+    >
+    </ngb-pagination>
+  </div>
+  <div class="d-grid justify-content-md-end btn-container">
+    <button type="button" class="btn btn-cerulean-900" (click)="completeSelected()">Complete selected</button>
+  </div>
+</div>

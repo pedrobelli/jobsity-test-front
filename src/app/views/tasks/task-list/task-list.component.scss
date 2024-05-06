@@ -1,0 +1,18 @@
+.component-body {
+
+  td.title {
+    max-width: 50px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .table-icons {
+    margin-right: 5px;
+    cursor: pointer;
+  }
+
+  .pagination-options-control {
+    padding: 0 0.5rem;
+  }
+}
