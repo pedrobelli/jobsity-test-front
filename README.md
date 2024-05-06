@@ -6,7 +6,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 This are my local dependencies used to run this project:
  - Nodejs 20.12.1;
- - npm 10.5.0 (you can use other package managers if you preffr);
+ - npm 10.5.0 (you can use other package managers if you prefer);
  - Angular CLI 17.3.6;
 
 Before attempting to start the server run `npm install` to install the project dependencies.
